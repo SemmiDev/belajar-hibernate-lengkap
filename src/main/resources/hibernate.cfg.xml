@@ -37,5 +37,7 @@
         <mapping class="com.sammidev.entity.Teacher"/>
         <mapping class="com.sammidev.entity.Customerr"/>
         <mapping class="com.sammidev.entity.Product"/>
+        <mapping class="com.sammidev.training.Jobs"/>
+        <mapping class="com.sammidev.training.Employees"/>
     </session-factory>
 </hibernate-configuration>

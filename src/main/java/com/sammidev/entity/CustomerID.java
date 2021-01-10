@@ -26,4 +26,3 @@ public class CustomerID implements Serializable {
     private Integer year;
 
 }
-
