@@ -1,9 +1,6 @@
 package com.sammidev.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -15,13 +12,19 @@ import javax.persistence.*;
 @Table(
         name = "employee"
 )
+@SequenceGenerator(
+        name = "seq_gen_employee",
+        allocationSize = 1,
+        sequenceName = "seq_employee",
+        initialValue = 1
+)
 public class Employee {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "seq_gen_employee")
     private Long id;
 
-    @Column(name = "nama", length = 10)
+    @Column(name = "nama", length = 25)
     private String name;
 }
