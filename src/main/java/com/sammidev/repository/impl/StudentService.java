@@ -1,17 +1,18 @@
-package com.sammidev.repository;
+package com.sammidev.repository.impl;
 
 import com.sammidev.entity.Student;
+import com.sammidev.repository.CrudRepository;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
 import java.util.List;
 import java.util.Optional;
 
-public class StudentRepositoryImpl implements StudentRepository<Student, Long> {
+public class StudentService implements CrudRepository<Student, Long> {
 
     private Session session;
 
-    public StudentRepositoryImpl(Session session) {
+    public StudentService(Session session) {
         this.session = session;
     }
 

@@ -2,6 +2,7 @@ package com.sammidev.repository;
 
 import com.sammidev.config.HibernateConfiguration;
 import com.sammidev.entity.Student;
+import com.sammidev.repository.impl.StudentService;
 import junit.framework.TestCase;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Session;
@@ -15,13 +16,13 @@ import java.util.Optional;
 public class StudentTest extends TestCase {
 
     private Session session;
-    private StudentRepositoryImpl studentRepository;
+    private StudentService studentRepository;
 
     @Override
     public void setUp() throws Exception {
         log.info("init hibernate session");
         this.session = HibernateConfiguration.getSession();
-        this.studentRepository = new StudentRepositoryImpl(session);
+        this.studentRepository = new StudentService(session);
     }
 
     @Test
